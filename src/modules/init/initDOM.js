@@ -1,42 +1,53 @@
+/**
+ * 애플리케이션의 DOM 요소 초기화 모듈
+ * 앱의 모든 UI 요소를 생성하고 구조화하는 기능 제공
+ */
 import DOMHelpers from '../helpers/DOMHelpers';
 import assets from './assets';
 import tooltip from '../features/todo.tooltip';
 
+// DOM 조작을 위한 헬퍼 함수들 가져오기
 const {
-  createElement,
-  on,
-  off,
-  getElement,
-  addClass,
-  removeClass,
-  toggleClass,
-  disableTransition,
-  wrap,
+  createElement,       // 요소 생성 함수
+  on,                  // 이벤트 리스너 추가 함수
+  off,                 // 이벤트 리스너 제거 함수
+  getElement,          // 요소 선택 함수
+  addClass,            // 클래스 추가 함수
+  removeClass,         // 클래스 제거 함수
+  toggleClass,         // 클래스 토글 함수
+  disableTransition,   // 트랜지션 비활성화 함수
+  wrap,                // 요소 래핑 함수
 } = DOMHelpers();
 
+// 애셋(아이콘, 이미지, 사운드 등) 가져오기
 const {
-  arrowSVG,
-  emptyStateSVG,
-  calendarSVG,
-  noteSVG,
-  checkMarkSVG,
-  menuSVG,
-  plusSVG,
-  removeSVG,
-  importantSVG,
-  daySVG,
-  sortSVG,
-  sortNameSVG,
-  prioritySVG,
-  sortCompletedSVG,
-  sortCreationDateSVG,
-  completeSound,
-  chevronSVG,
-  searchSVG,
+  arrowSVG,            // 화살표 아이콘
+  emptyStateSVG,       // 빈 상태 이미지
+  calendarSVG,         // 달력 아이콘
+  noteSVG,             // 메모 아이콘
+  checkMarkSVG,        // 체크 표시 아이콘
+  menuSVG,             // 메뉴 아이콘
+  plusSVG,             // 더하기 아이콘
+  removeSVG,           // 제거 아이콘
+  importantSVG,        // 중요 아이콘
+  daySVG,              // 오늘 아이콘
+  sortSVG,             // 정렬 아이콘
+  sortNameSVG,         // 이름 정렬 아이콘
+  prioritySVG,         // 우선순위 아이콘
+  sortCompletedSVG,    // 완료 정렬 아이콘
+  sortCreationDateSVG, // 생성 날짜 정렬 아이콘
+  completeSound,       // 완료 소리
+  chevronSVG,          // 쉐브론 아이콘
+  searchSVG,           // 검색 아이콘
 } = assets();
 
+/**
+ * DOM 요소 초기화 함수
+ * 애플리케이션의 모든 UI 요소를 생성하고 구조화함
+ * @returns {Object} 생성된 DOM 요소들을 포함하는 객체
+ */
 const initializeDOMElements = () => {
-  // the root element
+  // 루트 요소 (앱의 최상위 컨테이너)
   const root = document.getElementById('root');
   // Header
   const header = createElement('header');
@@ -207,7 +218,12 @@ const initializeDOMElements = () => {
     };
     on(sortIndicator, 'animationend', handleAnimation);
   };
-  // Helper function to setup sortIndicator
+  /**
+   * 정렬 표시기 설정
+   * @param {string} type 정렬 유형
+   * @param {string} direction 정렬 방향
+   * @param {boolean} isAnimated 애니메이션 여부
+   */
   const setSortIndicator = (type, direction, isAnimated) => {
     if (type === 'none') {
       if (tasksHeader.contains(sortIndicator)) {

@@ -1,155 +1,155 @@
 # TodoMVC (Vanilla ES6)
 
-Simply the best todo list app created using plain JavaScript (ES6). And all those awesome features were created from scratch _(Drag'n'Drop, animations, modal, sort (animated), search, tooltip, etc.)._
+간단히 말해, 순수 JavaScript(ES6)로 작성된 최고의 할 일 목록 앱입니다. 모든 기능은 처음부터 직접 구현되었습니다 _(드래그 앤 드롭, 애니메이션, 모달, 정렬(애니메이션 포함), 검색, 툴팁 등)_.
 
-The goal of this project was to see how big and complex an app can be built before it was time to switch to a JavaScript framework ([ReactJS](https://reactjs.org/), [VueJS](https://vuejs.org/) or [Angular](https://angular.io/)).
+이 프로젝트의 목표는 JavaScript 프레임워크([ReactJS](https://reactjs.org/), [VueJS](https://vuejs.org/) 또는 [Angular](https://angular.io/))로 전환하기 전에 얼마나 크고 복잡한 앱을 구축할 수 있는지 확인하는 것이었습니다.
 
-It was possible to keep the project/code clean and maintainable thanks to the following:
+다음 덕분에 프로젝트/코드를 깔끔하고 유지 관리 가능하게 유지할 수 있었습니다:
 
-- [The MVC design pattern](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#detailmvcmvp)
-- [The module design pattern](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript)
-- [The factory method pattern](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#factorypatternjavascript)
-- Unit testing ([Jest framework](https://jestjs.io/)) - Test driven development
+- [MVC 디자인 패턴](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#detailmvcmvp)
+- [모듈 디자인 패턴](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript)
+- [팩토리 메서드 패턴](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#factorypatternjavascript)
+- 단위 테스트 ([Jest 프레임워크](https://jestjs.io/)) - 테스트 주도 개발
 
-## Table of contents
+## 목차
 
-1. [Demo](#demo)
-2. [App screenshots](#App-screenshots)
-3. [Technologies](#technologies)
-4. [Features & instructions](#features-&-instructions)
-5. [Development](#development)
+1. [데모](#demo)
+2. [앱 스크린샷](#App-screenshots)
+3. [기술](#technologies)
+4. [기능 및 지침](#features-&-instructions)
+5. [개발](#development)
 
-## Demo
+## 데모
 
-Here is the working live demo:
+여기에서 작동하는 라이브 데모를 확인할 수 있습니다:
 [https://tarhi-saad.github.io/TodoMVC-Vanilla-ES6/](https://tarhi-saad.github.io/TodoMVC-Vanilla-ES6/).
 
-## App screenshots
+## 앱 스크린샷
 
-> **Desktop version**
+> **데스크탑 버전**
 
 ![Desktop-screenshot](https://user-images.githubusercontent.com/14235870/74249199-16183e80-4ce9-11ea-9c47-cad8960e98b7.png)
 
-> **Mobile version**
+> **모바일 버전**
 
-|                                                          **Mobile**                                                          |                                                          **tablet**                                                          |
+|                                                          **모바일**                                                          |                                                          **태블릿**                                                          |
 | :--------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------: |
 | <img width="282" src="https://user-images.githubusercontent.com/14235870/74251992-482b9f80-4ced-11ea-8f91-6dd6a40b6eb4.png"> | <img width="448" src="https://user-images.githubusercontent.com/14235870/74251184-09491a00-4cec-11ea-8a6b-04623ce3fe57.png"> |
 
-## Technologies
+## 기술
 
-- Javascript modules, ES6
-- Material Design
-- The Web Storage API
+- 자바스크립트 모듈, ES6
+- 머티리얼 디자인
+- 웹 스토리지 API
 - [Webpack 4](https://webpack.js.org/)
-- [Jest framework](https://jestjs.io/) (Unit testing)
+- [Jest 프레임워크](https://jestjs.io/) (단위 테스트)
 
 <img width="64" height="64" src="https://user-images.githubusercontent.com/14235870/74346940-99e92e00-4db0-11ea-9507-5d02d47afc11.png"><img width="64" height="64" src="https://user-images.githubusercontent.com/14235870/74348100-76bf7e00-4db2-11ea-966a-7e708614fa1e.png">
 
-## Features & instructions
+## 기능 및 지침
 
-### 1- App structure
+### 1- 앱 구조
 
-- There are default projects and you can **(create / delete / edit name)** of new ones.
-- In every project you can **(create / delete / edit / set as completed)** our todos.
-- Every todo has details.
+- 기본 프로젝트가 있으며 새 프로젝트를 **(생성 / 삭제 / 이름 편집)**할 수 있습니다.
+- 각 프로젝트에서 **(생성 / 삭제 / 편집 / 완료로 설정)**할 수 있습니다.
+- 각 할 일에는 세부 정보가 있습니다.
 
-### 2- Todo details
+### 2- 할 일 세부 정보
 
-You can select a todo to access its details to do the following:
+할 일을 선택하여 다음 작업을 수행할 수 있습니다:
 
-- Edit name
-- Bookmark todo
-- Add subtasks
-- Add to **My Day** (see _Default projects_ below for more details)
-- Add due date
-- Set priority
-- Add note
+- 이름 편집
+- 할 일 북마크
+- 하위 작업 추가
+- **내 하루**에 추가 (자세한 내용은 _기본 프로젝트_ 참조)
+- 기한 추가
+- 우선 순위 설정
+- 메모 추가
 
-### 3- Default projects
+### 3- 기본 프로젝트
 
-- **All Tasks**: Here you can find and manipulate all todos from every project.\
-  Todos created in this project will be added to **Tasks project**.
+- **모든 작업**: 여기에서 모든 프로젝트의 모든 할 일을 찾고 조작할 수 있습니다.\
+  이 프로젝트에서 생성된 할 일은 **작업 프로젝트**에 추가됩니다.
 
-- **My Day**: It's the same as My Day feature in microsoft todo list. With My Day, you can manage your daily tasks while letting you start each day with a clean slate. When you first open My Day each day, you're greeted with a fresh space to add the tasks you want to accomplish that day.\
-  Todos created in this project will have **My Day** set per default and added to **Tasks Project**.
+- **내 하루**: Microsoft 할 일 목록의 내 하루 기능과 동일합니다. 내 하루를 사용하면 매일 깨끗한 상태로 하루를 시작할 수 있습니다. 매일 처음 내 하루를 열면 그날 완료하고 싶은 작업을 추가할 수 있는 새 공간이 표시됩니다.\
+  이 프로젝트에서 생성된 할 일은 기본적으로 **내 하루**로 설정되고 **작업 프로젝트**에 추가됩니다.
 
-- **Bookmarked**: If you set a todo as bookmarked you'll find it in this project.\
-  Todos created in this project will get Bookmarked and added to **Tasks project**.
+- **북마크됨**: 할 일을 북마크로 설정하면 이 프로젝트에서 찾을 수 있습니다.\
+  이 프로젝트에서 생성된 할 일은 북마크되고 **작업 프로젝트**에 추가됩니다.
 
-- **Planned**: Every todo who has a due date can be found here and organized as such: **(Earlier / Today / Tomorrow / Later this week / Next week / Later)**.\
-  Todos created in this project will get **Today** as a due date and added to **Tasks project**.
+- **계획됨**: 기한이 있는 모든 할 일은 여기에서 찾을 수 있으며 다음과 같이 정리됩니다: **(이전 / 오늘 / 내일 / 이번 주 후반 / 다음 주 / 나중에)**.\
+  이 프로젝트에서 생성된 할 일은 **오늘** 기한이 설정되고 **작업 프로젝트**에 추가됩니다.
 
-- **Tasks**: This is the default project.
+- **작업**: 이것이 기본 프로젝트입니다.
 
-### 4- Sorting todos
+### 4- 할 일 정렬
 
-- In every project you can sort todos (in ascending or descending order) by:
+- 각 프로젝트에서 할 일을 다음 순서로 정렬할 수 있습니다 (오름차순 또는 내림차순):
 
-  - Alphabetically
-  - Completed
-  - Added to My Day
-  - Bookmarked
-  - Due date
-  - Creation date
-  - Priority
+  - 알파벳순
+  - 완료됨
+  - 내 하루에 추가됨
+  - 북마크됨
+  - 기한
+  - 생성 날짜
+  - 우선 순위
 
-- Sorting todos is animated
+- 할 일 정렬은 애니메이션 처리됩니다
 
-- Sort options are saved for every project individually
+- 정렬 옵션은 각 프로젝트별로 저장됩니다
 
-### 5- Drag'n'Drop
+### 5- 드래그 앤 드롭
 
-- We can reorder todos by a simple **Drag'n'Drop**
+- 간단한 **드래그 앤 드롭**으로 할 일 순서를 변경할 수 있습니다
 
-- The new order is saved
+- 새 순서가 저장됩니다
 
-- Touch screen support for **Drag'n'Drop** (The touch events API). You can activate **Drag'n'Drop** by a long press on the selected todo
+- **드래그 앤 드롭**에 대한 터치 스크린 지원 (터치 이벤트 API). 선택한 할 일을 길게 눌러 **드래그 앤 드롭**을 활성화할 수 있습니다
 
-- Animated **Drag'n'Drop**
+- 애니메이션 **드래그 앤 드롭**
 
-### 6- Search feature
+### 6- 검색 기능
 
-- Search for todos in every project
+- 각 프로젝트에서 할 일 검색
 
-- You can edit todos while still in search mode
+- 검색 모드에서도 할 일 편집 가능
 
-### 7- Indicators in todos
+### 7- 할 일의 지표
 
-- There are indicators for every todo option that are added to the edited todo item:
+- 편집된 할 일 항목에 추가된 모든 할 일 옵션에 대한 지표가 있습니다:
 
-  - My Day indicator
-  - Subtask indicator
-  - Due date indicator
-  - Note indicator
-  - Bookmarked indicator
+  - 내 하루 지표
+  - 하위 작업 지표
+  - 기한 지표
+  - 메모 지표
+  - 북마크 지표
 
-- We can easily check our todo options without accessing its details view
+- 세부 정보 보기 없이 할 일 옵션을 쉽게 확인할 수 있습니다
 
-### 8- Animation & design
+### 8- 애니메이션 및 디자인
 
-- Material design
+- 머티리얼 디자인
 
-- Great & smooth animation with every interaction _(add todo, delete todo, toggle completed, sort, Drag'n'Drop, open/close project window, add subtask, delete subtask, etc.)_
+- 모든 상호작용에 대한 훌륭하고 부드러운 애니메이션 _(할 일 추가, 할 일 삭제, 완료 토글, 정렬, 드래그 앤 드롭, 프로젝트 창 열기/닫기, 하위 작업 추가, 하위 작업 삭제 등)_
 
-### 9- Full mobile support
+### 9- 전체 모바일 지원
 
-- App fully responsive and easy to use in small screen devices
+- 앱은 완전히 반응형이며 작은 화면 장치에서도 사용하기 쉽습니다
 
-- All features are supported (i.e. Drag'n'Drop, animations, etc.)
+- 모든 기능이 지원됩니다 (예: 드래그 앤 드롭, 애니메이션 등)
 
-## Development
+## 개발
 
-To set up this App locally:
+이 앱을 로컬에서 설정하려면:
 
-1- Clone this repo to your desktop
+1- 이 저장소를 데스크탑에 클론합니다
 
-2- Run `npm install` to install all the dependencies.
+2- `npm install`을 실행하여 모든 종속성을 설치합니다.
 
-3- Run `npm start` to lunch the App.
+3- `npm start`를 실행하여 앱을 시작합니다.
 
-## License
+## 라이센스
 
-> You can check out the full license [here](LICENSE)
+> 전체 라이센스를 [여기](LICENSE)에서 확인할 수 있습니다
 
-This project is licensed under the terms of the **GNU GPLv3** license.
+이 프로젝트는 **GNU GPLv3** 라이센스 조건에 따라 라이센스가 부여됩니다.
